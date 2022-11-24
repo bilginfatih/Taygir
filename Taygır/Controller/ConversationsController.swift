@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifer = "ConversationCell"
 
@@ -20,16 +21,44 @@ class ConversationsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
+        authenticationUser()
     }
     
     // MARK: - Selectors
     
     @objc func showProfile() {
-        print("123")
+        logout()
+    }
+    
+    // MARK: - API
+    
+    func authenticationUser() {
+        if Auth.auth().currentUser?.uid == nil {
+            presentLoginScreen()
+        } else {
+            print("kullanici var \(Auth.auth().currentUser?.uid)")
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            presentLoginScreen()
+        } catch {
+            print("kullanici cikis yapamadi")
+        }
     }
     
     // MARK: - Helpers
+    
+    func presentLoginScreen() {
+        DispatchQueue.main.async {
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+        }
+    }
     
     func configureUI() {
         view.backgroundColor = .white
@@ -60,7 +89,7 @@ class ConversationsController: UIViewController {
         let apperance = UINavigationBarAppearance()
         apperance.configureWithOpaqueBackground()
         apperance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        apperance.backgroundColor = .systemPurple
+        apperance.backgroundColor = .taygir
         
         navigationController?.navigationBar.standardAppearance = apperance
         navigationController?.navigationBar.compactAppearance = apperance

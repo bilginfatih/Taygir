@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistirationController: UIViewController {
     
     // MARK: - Properties
     
     private var viewModel = RegistirationViewModel()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -48,9 +50,21 @@ class RegistirationController: UIViewController {
         return tf
     }()
     
-    private let fullnameTextField = CustomTextField(placeholder: "Ad Soyad")
+    private let fullnameTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Ad Soyad")
+        tf.returnKeyType = .next
+        tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
+        return tf
+    }()
     
-    private let usernameTextField = CustomTextField(placeholder: "Kullanıcı Adı")
+    private let usernameTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Kullanıcı Adı")
+        tf.returnKeyType = .next
+        tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
+        return tf
+    }()
     
     private let passwordTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Şifre")
@@ -64,13 +78,14 @@ class RegistirationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Kayıt Ol", for: .normal)
-        button.backgroundColor = .link
+        button.backgroundColor = .taygir
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         //button.layer.masksToBounds = true
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.setHeight(height: 50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleRegistiration), for: .touchUpInside)
         return button
     }()
     
@@ -94,9 +109,34 @@ class RegistirationController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureNotificationObservers()
+        setUpGestures()
     }
     
     // MARK: - Selectors
+    
+    @objc func handleRegistiration() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        guard let profileImage = profileImage else { return }
+        
+        let credentials = RegistirationCredentials(email: email, password: password,
+                                                   fullname: fullname, username: username,
+                                                   profileImage: profileImage)
+        
+        showLoader(true, withText: "Kayıt olunuyor")
+        
+        AuthService.shared.createUser(credentials: credentials) { error in
+            if let error = error {
+                print("DEBUG: \(error.localizedDescription)")
+                self.showLoader(false)
+                return
+            }
+            self.showLoader(false)
+            self.dismiss(animated: true)
+        }
+    }
     
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
@@ -120,6 +160,18 @@ class RegistirationController: UIViewController {
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func keyboardWillShow() {
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 88
+        }
+    }
+    
+    @objc func keyboardWillHide() {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
     }
     
     // MARK: - Helpers
@@ -160,7 +212,22 @@ class RegistirationController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    // MARK: - Gestures
+
+        private func setUpGestures() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            view.addGestureRecognizer(tapGesture)
+        }
+
+        @objc private func handleTap() {
+            view.endEditing(true)
+        }
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -168,6 +235,7 @@ class RegistirationController: UIViewController {
 extension RegistirationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        profileImage = image
         plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         plusPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
         plusPhotoButton.layer.borderWidth = 3.0
@@ -188,5 +256,21 @@ extension RegistirationController: AuthenticationControllerProtocol {
             signUpButton.isEnabled = false
             signUpButton.backgroundColor = .taygir
         }
+    }
+}
+
+extension RegistirationController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case emailTextField:
+                fullnameTextField.becomeFirstResponder()
+            case fullnameTextField:
+                usernameTextField.becomeFirstResponder()
+            case usernameTextField:
+                passwordTextField.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+            return true
     }
 }

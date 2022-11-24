@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import JGProgressHUD
 
 private let buttonFrame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
 private let buttonHeight = textFieldHeight
@@ -148,7 +151,20 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         
+        showLoader(true, withText: "Giriş Yapılıyor")
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to login with error: \(error.localizedDescription)")
+                self.showLoader(false)
+                return
+            }
+            self.showLoader(false)
+            self.dismiss(animated: true)
+        }
     }
     
     @objc func textDidChange(sender: UITextField) {

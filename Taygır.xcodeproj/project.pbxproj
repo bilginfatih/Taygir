@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A7E62A292E4C9B00AD6DBE /* Pods_Taygır.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */; };
+		39A7E62E292E5A8500AD6DBE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7E62D292E5A8500AD6DBE /* AuthService.swift */; };
 		39FF933A29279C1200456B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933929279C1200456B3A /* AppDelegate.swift */; };
 		39FF933C29279C1200456B3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933B29279C1200456B3A /* SceneDelegate.swift */; };
 		39FF933E29279C1200456B3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933D29279C1200456B3A /* ViewController.swift */; };
@@ -40,9 +42,12 @@
 		39FF938B292BAA9700456B3A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF938A292BAA9700456B3A /* CustomTextField.swift */; };
 		39FF938D292CB66500456B3A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF938C292CB66500456B3A /* LoginViewModel.swift */; };
 		39FF9390292DFB7500456B3A /* RegistirationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF938F292DFB7500456B3A /* RegistirationViewModel.swift */; };
+		39FF9392292E084C00456B3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39FF9391292E084C00456B3A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Taygır.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39A7E62D292E5A8500AD6DBE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		39FF933629279C1200456B3A /* Taygır.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taygır.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF933929279C1200456B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FF933B29279C1200456B3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +83,10 @@
 		39FF938A292BAA9700456B3A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		39FF938C292CB66500456B3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		39FF938F292DFB7500456B3A /* RegistirationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationViewModel.swift; sourceTree = "<group>"; };
+		39FF9391292E084C00456B3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A54131DEED7D026FD9B09AAC /* Pods_Tayg_r.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tayg_r.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73F2B83C9CF1263E279B283 /* Pods-Taygır.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taygır.release.xcconfig"; path = "Target Support Files/Pods-Taygır/Pods-Taygır.release.xcconfig"; sourceTree = "<group>"; };
+		DF6308ED33BD567FBC57C128 /* Pods-Taygır.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taygır.debug.xcconfig"; path = "Target Support Files/Pods-Taygır/Pods-Taygır.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A7E62A292E4C9B00AD6DBE /* Pods_Taygır.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +106,8 @@
 			children = (
 				39FF933829279C1200456B3A /* Taygır */,
 				39FF933729279C1200456B3A /* Products */,
+				59988487A4F112D72705E89F /* Pods */,
+				725EF1C71EAAD29D55B5D1FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +134,7 @@
 				39FF933F29279C1200456B3A /* Main.storyboard */,
 				39FF934229279C1200456B3A /* Assets.xcassets */,
 				39FF934429279C1200456B3A /* LaunchScreen.storyboard */,
+				39FF9391292E084C00456B3A /* GoogleService-Info.plist */,
 				39FF934729279C1200456B3A /* Info.plist */,
 			);
 			path = "Taygır";
@@ -139,6 +152,7 @@
 		39FF934E29279C2800456B3A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				39A7E62D292E5A8500AD6DBE /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -236,6 +250,24 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		59988487A4F112D72705E89F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF6308ED33BD567FBC57C128 /* Pods-Taygır.debug.xcconfig */,
+				B73F2B83C9CF1263E279B283 /* Pods-Taygır.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		725EF1C71EAAD29D55B5D1FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */,
+				A54131DEED7D026FD9B09AAC /* Pods_Tayg_r.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39FF934A29279C1200456B3A /* Build configuration list for PBXNativeTarget "Taygır" */;
 			buildPhases = (
+				C9C6E3D31BE2F5897783B67C /* [CP] Check Pods Manifest.lock */,
 				39FF933229279C1200456B3A /* Sources */,
 				39FF933329279C1200456B3A /* Frameworks */,
 				39FF933429279C1200456B3A /* Resources */,
+				6AFD164C803D13D552E2C4BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39FF934629279C1200456B3A /* LaunchScreen.storyboard in Resources */,
+				39FF9392292E084C00456B3A /* GoogleService-Info.plist in Resources */,
 				39FF934329279C1200456B3A /* Assets.xcassets in Resources */,
 				39FF934129279C1200456B3A /* Main.storyboard in Resources */,
 			);
@@ -302,12 +337,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6AFD164C803D13D552E2C4BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Taygır/Pods-Taygır-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Taygır/Pods-Taygır-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Taygır/Pods-Taygır-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9C6E3D31BE2F5897783B67C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taygır-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39FF933229279C1200456B3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				39FF938B292BAA9700456B3A /* CustomTextField.swift in Sources */,
+				39A7E62E292E5A8500AD6DBE /* AuthService.swift in Sources */,
 				39FF937F2927B1A700456B3A /* Head.swift in Sources */,
 				39FF93782927B1A700456B3A /* Muzzle.swift in Sources */,
 				39FF937C2927B1A700456B3A /* Mouth.swift in Sources */,
@@ -478,6 +556,7 @@
 		};
 		39FF934B29279C1200456B3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6308ED33BD567FBC57C128 /* Pods-Taygır.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,8 +568,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,14 +577,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thebilgin.Tayg-r";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		39FF934C29279C1200456B3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B73F2B83C9CF1263E279B283 /* Pods-Taygır.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,8 +600,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,9 +609,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thebilgin.Tayg-r";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>250001025148-gffhold85bpdul1ng2rmafc8p859qn62.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.250001025148-gffhold85bpdul1ng2rmafc8p859qn62</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBDVp0ivwoh2_yI_6zUnZZy4G0atxqWBnw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>250001025148</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.thebilgin.Tayg-r</string>
+	<key>PROJECT_ID</key>
+	<string>taygir-78679</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taygir-78679.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:250001025148:ios:16b247684e142a6edcc1f9</string>
+</dict>
+</plist>
