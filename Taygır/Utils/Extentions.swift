@@ -106,7 +106,7 @@ extension UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .systemPurple
+        appearance.backgroundColor = .taygirEx
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
