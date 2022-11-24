@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		39A7E62A292E4C9B00AD6DBE /* Pods_Taygır.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */; };
 		39A7E62E292E5A8500AD6DBE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7E62D292E5A8500AD6DBE /* AuthService.swift */; };
+		39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F2292F96B7009E21C6 /* MessageCell.swift */; };
+		39AA19F5292FA89D009E21C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F4292FA89D009E21C6 /* Message.swift */; };
+		39AA19F7292FAB02009E21C6 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */; };
 		39E37418292F7B46009A7824 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37417292F7B46009A7824 /* NewMessageController.swift */; };
 		39E3741A292F801D009A7824 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37419292F801D009A7824 /* UserCell.swift */; };
 		39E3741C292F8322009A7824 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3741B292F8322009A7824 /* User.swift */; };
 		39E3741E292F836C009A7824 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3741D292F836C009A7824 /* Service.swift */; };
+		39E37420292F88CB009A7824 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3741F292F88CB009A7824 /* ChatController.swift */; };
+		39E37422292F8C92009A7824 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37421292F8C92009A7824 /* CustomInputAccessoryView.swift */; };
 		39FF933A29279C1200456B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933929279C1200456B3A /* AppDelegate.swift */; };
 		39FF933C29279C1200456B3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933B29279C1200456B3A /* SceneDelegate.swift */; };
 		39FF933E29279C1200456B3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF933D29279C1200456B3A /* ViewController.swift */; };
@@ -52,10 +57,15 @@
 /* Begin PBXFileReference section */
 		39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Taygır.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A7E62D292E5A8500AD6DBE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		39AA19F2292F96B7009E21C6 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		39AA19F4292FA89D009E21C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		39E37417292F7B46009A7824 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		39E37419292F801D009A7824 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		39E3741B292F8322009A7824 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		39E3741D292F836C009A7824 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		39E3741F292F88CB009A7824 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		39E37421292F8C92009A7824 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		39FF933629279C1200456B3A /* Taygır.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taygır.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF933929279C1200456B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FF933B29279C1200456B3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +182,7 @@
 				39FF93552927AB8F00456B3A /* Authentication */,
 				39FF935329279C8800456B3A /* ConversationsController.swift */,
 				39E37417292F7B46009A7824 /* NewMessageController.swift */,
+				39E3741F292F88CB009A7824 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				39FF938E292DFB5B00456B3A /* Authentication */,
+				39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +202,8 @@
 				39FF9388292BA7D000456B3A /* InputContainerView.swift */,
 				39FF938A292BAA9700456B3A /* CustomTextField.swift */,
 				39E37419292F801D009A7824 /* UserCell.swift */,
+				39E37421292F8C92009A7824 /* CustomInputAccessoryView.swift */,
+				39AA19F2292F96B7009E21C6 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				39E3741B292F8322009A7824 /* User.swift */,
+				39AA19F4292FA89D009E21C6 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,6 +413,7 @@
 			files = (
 				39FF938B292BAA9700456B3A /* CustomTextField.swift in Sources */,
 				39A7E62E292E5A8500AD6DBE /* AuthService.swift in Sources */,
+				39AA19F7292FAB02009E21C6 /* MessageViewModel.swift in Sources */,
 				39FF937F2927B1A700456B3A /* Head.swift in Sources */,
 				39FF93782927B1A700456B3A /* Muzzle.swift in Sources */,
 				39FF937C2927B1A700456B3A /* Mouth.swift in Sources */,
@@ -405,6 +421,7 @@
 				39FF9389292BA7D000456B3A /* InputContainerView.swift in Sources */,
 				39FF93872927B1B300456B3A /* CritterAssets.swift in Sources */,
 				39E37418292F7B46009A7824 /* NewMessageController.swift in Sources */,
+				39AA19F5292FA89D009E21C6 /* Message.swift in Sources */,
 				39FF937B2927B1A700456B3A /* RightArm.swift in Sources */,
 				39FF93632927B16B00456B3A /* Degree.swift in Sources */,
 				39FF933A29279C1200456B3A /* AppDelegate.swift in Sources */,
@@ -417,6 +434,7 @@
 				39FF93852927B1B300456B3A /* CritterAnimatable.swift in Sources */,
 				39FF935E2927AFD100456B3A /* Extentions.swift in Sources */,
 				39E3741A292F801D009A7824 /* UserCell.swift in Sources */,
+				39E37422292F8C92009A7824 /* CustomInputAccessoryView.swift in Sources */,
 				39FF93752927B1A700456B3A /* LeftArm.swift in Sources */,
 				39E3741E292F836C009A7824 /* Service.swift in Sources */,
 				39FF93772927B1A700456B3A /* RightEar.swift in Sources */,
@@ -424,6 +442,7 @@
 				39E3741C292F8322009A7824 /* User.swift in Sources */,
 				39FF9390292DFB7500456B3A /* RegistirationViewModel.swift in Sources */,
 				39FF938D292CB66500456B3A /* LoginViewModel.swift in Sources */,
+				39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */,
 				39FF937E2927B1A700456B3A /* LeftEarMask.swift in Sources */,
 				39FF93862927B1B300456B3A /* CritterView.swift in Sources */,
 				39FF93592927ABCF00456B3A /* RegistirationController.swift in Sources */,
@@ -431,6 +450,7 @@
 				39FF93572927ABBB00456B3A /* LoginController.swift in Sources */,
 				39FF93762927B1A700456B3A /* LeftEar.swift in Sources */,
 				39FF93812927B1A700456B3A /* RightEye.swift in Sources */,
+				39E37420292F88CB009A7824 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
