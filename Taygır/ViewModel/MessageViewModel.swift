@@ -12,7 +12,7 @@ struct MessageViewModel {
     private let message: Message
     
     var messageBackgroundColor: UIColor {
-        return message.isFromCurrentUser ? .lightGray : .link
+        return message.isFromCurrentUser ? .link : .lightGray
     }
     
     var messageTextColor: UIColor {
@@ -24,11 +24,16 @@ struct MessageViewModel {
     }
     
     var leftAnchorActive: Bool {
-        return message.isFromCurrentUser
+        return !message.isFromCurrentUser
     }
     
     var shouldHideProfileImage: Bool {
         return message.isFromCurrentUser
+    }
+    
+    var profileImageUrl: URL? {
+        guard let user = message.user else { return nil }
+        return URL(string: user.profileImageUrl)
     }
     
     init(message: Message) {

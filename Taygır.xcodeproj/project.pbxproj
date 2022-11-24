@@ -12,6 +12,9 @@
 		39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F2292F96B7009E21C6 /* MessageCell.swift */; };
 		39AA19F5292FA89D009E21C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F4292FA89D009E21C6 /* Message.swift */; };
 		39AA19F7292FAB02009E21C6 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */; };
+		39AA19F9292FB45F009E21C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F8292FB45F009E21C6 /* Constants.swift */; };
+		39AA19FB292FDC65009E21C6 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19FA292FDC65009E21C6 /* ConversationCell.swift */; };
+		39AA19FD292FE45B009E21C6 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */; };
 		39E37418292F7B46009A7824 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37417292F7B46009A7824 /* NewMessageController.swift */; };
 		39E3741A292F801D009A7824 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37419292F801D009A7824 /* UserCell.swift */; };
 		39E3741C292F8322009A7824 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3741B292F8322009A7824 /* User.swift */; };
@@ -60,6 +63,9 @@
 		39AA19F2292F96B7009E21C6 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		39AA19F4292FA89D009E21C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		39AA19F8292FB45F009E21C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		39AA19FA292FDC65009E21C6 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		39E37417292F7B46009A7824 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		39E37419292F801D009A7824 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		39E3741B292F8322009A7824 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			children = (
 				39FF935F2927B14E00456B3A /* Helpers */,
 				39FF935D2927AFD100456B3A /* Extentions.swift */,
+				39AA19F8292FB45F009E21C6 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			children = (
 				39FF938E292DFB5B00456B3A /* Authentication */,
 				39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */,
+				39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				39E37419292F801D009A7824 /* UserCell.swift */,
 				39E37421292F8C92009A7824 /* CustomInputAccessoryView.swift */,
 				39AA19F2292F96B7009E21C6 /* MessageCell.swift */,
+				39AA19FA292FDC65009E21C6 /* ConversationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,10 +440,12 @@
 				39FF937D2927B1A700456B3A /* Nose.swift in Sources */,
 				39FF93802927B1A700456B3A /* Body.swift in Sources */,
 				39FF933C29279C1200456B3A /* SceneDelegate.swift in Sources */,
+				39AA19FB292FDC65009E21C6 /* ConversationCell.swift in Sources */,
 				39FF93852927B1B300456B3A /* CritterAnimatable.swift in Sources */,
 				39FF935E2927AFD100456B3A /* Extentions.swift in Sources */,
 				39E3741A292F801D009A7824 /* UserCell.swift in Sources */,
 				39E37422292F8C92009A7824 /* CustomInputAccessoryView.swift in Sources */,
+				39AA19F9292FB45F009E21C6 /* Constants.swift in Sources */,
 				39FF93752927B1A700456B3A /* LeftArm.swift in Sources */,
 				39E3741E292F836C009A7824 /* Service.swift in Sources */,
 				39FF93772927B1A700456B3A /* RightEar.swift in Sources */,
@@ -444,6 +455,7 @@
 				39FF938D292CB66500456B3A /* LoginViewModel.swift in Sources */,
 				39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */,
 				39FF937E2927B1A700456B3A /* LeftEarMask.swift in Sources */,
+				39AA19FD292FE45B009E21C6 /* ConversationViewModel.swift in Sources */,
 				39FF93862927B1B300456B3A /* CritterView.swift in Sources */,
 				39FF93592927ABCF00456B3A /* RegistirationController.swift in Sources */,
 				39FF93792927B1A700456B3A /* RightEarMask.swift in Sources */,
