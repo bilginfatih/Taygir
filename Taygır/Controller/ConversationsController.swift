@@ -28,7 +28,7 @@ class ConversationsController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -44,7 +44,11 @@ class ConversationsController: UIViewController {
     // MARK: - Selectors
     
     @objc func showProfile() {
-        logout()
+        let controller = ProfileController(style: .insetGrouped)
+        controller.delegate = self
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     @objc func showNewMessageController() {
@@ -126,7 +130,7 @@ class ConversationsController: UIViewController {
         let controller = ChatController(user: user)
         navigationController?.pushViewController(controller, animated: true)
     }
-
+    
 }
 
 extension ConversationsController: UITableViewDataSource {
@@ -154,5 +158,11 @@ extension ConversationsController: NewMessageControllerDelegate {
     func controller(_ controller: NewMessageController, wantsToStartChatVith user: User) {
         controller.dismiss(animated: true)
         showChatController(forUser: user)
+    }
+}
+
+extension ConversationsController: ProfileControllerDelegate {
+    func handleLogout() {
+        logout()
     }
 }

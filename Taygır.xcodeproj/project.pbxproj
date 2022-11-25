@@ -15,6 +15,11 @@
 		39AA19F9292FB45F009E21C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F8292FB45F009E21C6 /* Constants.swift */; };
 		39AA19FB292FDC65009E21C6 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19FA292FDC65009E21C6 /* ConversationCell.swift */; };
 		39AA19FD292FE45B009E21C6 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */; };
+		39AA1A00292FF1BC009E21C6 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19FF292FF1BC009E21C6 /* ProfileController.swift */; };
+		39AA1A02292FF3C6009E21C6 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1A01292FF3C6009E21C6 /* ProfileHeader.swift */; };
+		39AA1A04293014CE009E21C6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1A03293014CE009E21C6 /* ProfileViewModel.swift */; };
+		39AA1A06293015EF009E21C6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1A05293015EF009E21C6 /* ProfileCell.swift */; };
+		39AA1A08293069B8009E21C6 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1A07293069B8009E21C6 /* ProfileFooter.swift */; };
 		39E37418292F7B46009A7824 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37417292F7B46009A7824 /* NewMessageController.swift */; };
 		39E3741A292F801D009A7824 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E37419292F801D009A7824 /* UserCell.swift */; };
 		39E3741C292F8322009A7824 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3741B292F8322009A7824 /* User.swift */; };
@@ -66,6 +71,11 @@
 		39AA19F8292FB45F009E21C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39AA19FA292FDC65009E21C6 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		39AA19FF292FF1BC009E21C6 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		39AA1A01292FF3C6009E21C6 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		39AA1A03293014CE009E21C6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		39AA1A05293015EF009E21C6 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		39AA1A07293069B8009E21C6 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
 		39E37417292F7B46009A7824 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		39E37419292F801D009A7824 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		39E3741B292F8322009A7824 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 				39FF935329279C8800456B3A /* ConversationsController.swift */,
 				39E37417292F7B46009A7824 /* NewMessageController.swift */,
 				39E3741F292F88CB009A7824 /* ChatController.swift */,
+				39AA19FF292FF1BC009E21C6 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 				39FF938E292DFB5B00456B3A /* Authentication */,
 				39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */,
 				39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */,
+				39AA1A03293014CE009E21C6 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -213,6 +225,9 @@
 				39E37421292F8C92009A7824 /* CustomInputAccessoryView.swift */,
 				39AA19F2292F96B7009E21C6 /* MessageCell.swift */,
 				39AA19FA292FDC65009E21C6 /* ConversationCell.swift */,
+				39AA1A01292FF3C6009E21C6 /* ProfileHeader.swift */,
+				39AA1A05293015EF009E21C6 /* ProfileCell.swift */,
+				39AA1A07293069B8009E21C6 /* ProfileFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +442,8 @@
 				39FF93782927B1A700456B3A /* Muzzle.swift in Sources */,
 				39FF937C2927B1A700456B3A /* Mouth.swift in Sources */,
 				39FF933E29279C1200456B3A /* ViewController.swift in Sources */,
+				39AA1A00292FF1BC009E21C6 /* ProfileController.swift in Sources */,
+				39AA1A02292FF3C6009E21C6 /* ProfileHeader.swift in Sources */,
 				39FF9389292BA7D000456B3A /* InputContainerView.swift in Sources */,
 				39FF93872927B1B300456B3A /* CritterAssets.swift in Sources */,
 				39E37418292F7B46009A7824 /* NewMessageController.swift in Sources */,
@@ -436,6 +453,7 @@
 				39FF933A29279C1200456B3A /* AppDelegate.swift in Sources */,
 				39FF93622927B16B00456B3A /* CATransform3D+Helper.swift in Sources */,
 				39FF935429279C8800456B3A /* ConversationsController.swift in Sources */,
+				39AA1A06293015EF009E21C6 /* ProfileCell.swift in Sources */,
 				39FF937A2927B1A700456B3A /* LeftEye.swift in Sources */,
 				39FF937D2927B1A700456B3A /* Nose.swift in Sources */,
 				39FF93802927B1A700456B3A /* Body.swift in Sources */,
@@ -456,12 +474,14 @@
 				39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */,
 				39FF937E2927B1A700456B3A /* LeftEarMask.swift in Sources */,
 				39AA19FD292FE45B009E21C6 /* ConversationViewModel.swift in Sources */,
+				39AA1A04293014CE009E21C6 /* ProfileViewModel.swift in Sources */,
 				39FF93862927B1B300456B3A /* CritterView.swift in Sources */,
 				39FF93592927ABCF00456B3A /* RegistirationController.swift in Sources */,
 				39FF93792927B1A700456B3A /* RightEarMask.swift in Sources */,
 				39FF93572927ABBB00456B3A /* LoginController.swift in Sources */,
 				39FF93762927B1A700456B3A /* LeftEar.swift in Sources */,
 				39FF93812927B1A700456B3A /* RightEye.swift in Sources */,
+				39AA1A08293069B8009E21C6 /* ProfileFooter.swift in Sources */,
 				39E37420292F88CB009A7824 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
