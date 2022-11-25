@@ -14,7 +14,11 @@ struct Message {
     var timestamp: Timestamp!
     var user: User?
     
-    let isFromCurrentUser: Bool 
+    let isFromCurrentUser: Bool
+    
+    var chatPartnerId: String {
+        return isFromCurrentUser ? toId : fromId
+    }
     
     init(dictionary: [String: Any]) {
         self.text = dictionary["text"] as? String ?? ""

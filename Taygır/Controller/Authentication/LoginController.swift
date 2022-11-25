@@ -27,11 +27,17 @@ protocol AuthenticationControllerProtocol {
     func checkFromStatus()
 }
 
+protocol AuthenticationDelegate: class {
+    func authenticationComplete()
+}
+
 class LoginController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
     private var viewModel = LoginViewModel()
+    
+    weak var delegate: AuthenticationDelegate?
     
     private let critterView = CritterView(frame: critterViewFrame)
     
@@ -147,6 +153,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     @objc func handleShowSignUp() {
         let controller = RegistirationController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -158,12 +165,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("DEBUG: Failed to login with error: \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
         }
     }
     

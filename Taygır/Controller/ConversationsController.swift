@@ -16,6 +16,7 @@ class ConversationsController: UIViewController {
     
     private let tableView = UITableView()
     private var conversations = [Conversation]()
+    private var conversationsDictionary = [String: Conversation]()
     
     private let newMessageButton: UIButton = {
         let button = UIButton(type: .system)
@@ -62,8 +63,15 @@ class ConversationsController: UIViewController {
     // MARK: - API
     
     func fetchConversations() {
+        showLoader(true)
         Service.fetchConversations { conversations in
-            self.conversations = conversations
+            conversations.forEach { conversation in
+                let message = conversation.message
+                self.conversationsDictionary[message.chatPartnerId] = conversation
+            }
+            self.showLoader(false)
+            
+            self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
         }
     }
@@ -71,8 +79,6 @@ class ConversationsController: UIViewController {
     func authenticationUser() {
         if Auth.auth().currentUser?.uid == nil {
             presentLoginScreen()
-        } else {
-            print("kullanici var \(Auth.auth().currentUser?.uid)")
         }
     }
     
@@ -90,6 +96,7 @@ class ConversationsController: UIViewController {
     func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginController()
+            controller.delegate = self
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
@@ -156,7 +163,7 @@ extension ConversationsController: UITableViewDelegate {
 
 extension ConversationsController: NewMessageControllerDelegate {
     func controller(_ controller: NewMessageController, wantsToStartChatVith user: User) {
-        controller.dismiss(animated: true)
+        dismiss(animated: true)
         showChatController(forUser: user)
     }
 }
@@ -164,5 +171,13 @@ extension ConversationsController: NewMessageControllerDelegate {
 extension ConversationsController: ProfileControllerDelegate {
     func handleLogout() {
         logout()
+    }
+}
+
+extension ConversationsController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true)
+        configureUI()
+        fetchConversations()
     }
 }

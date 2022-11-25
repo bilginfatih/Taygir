@@ -18,13 +18,21 @@ class NewMessageController: UITableViewController {
     // MARK: - Properties
     
     private var users = [User]()
+    private var filteredUsers = [User]()
+    
     weak var delegate: NewMessageControllerDelegate?
+    private let searchController = UISearchController(searchResultsController: nil)
+    
+    private var inSearchMode: Bool {
+        return searchController.isActive && !searchController.searchBar.text!.isEmpty
+    }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureSearchController()
         fetchUsers()
     }
     
@@ -37,7 +45,10 @@ class NewMessageController: UITableViewController {
     // MARK: - API
     
     func fetchUsers() {
+        showLoader(true)
+        
         Service.fetchUsers { users in
+            self.showLoader(false)
             self.users = users
             self.tableView.reloadData()
         }
@@ -53,11 +64,26 @@ class NewMessageController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 80
     }
+    
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.showsCancelButton = false
+        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Kullanıcı ara"
+        definesPresentationContext = false
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.textColor = .taygir
+            textField.backgroundColor = .white
+        }
+    }
 }
 
 extension NewMessageController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return inSearchMode ? filteredUsers.count : users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +91,7 @@ extension NewMessageController {
         
         var content = cell.defaultContentConfiguration()
         
-        cell.user = users[indexPath.row]
+        cell.user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
         
         cell.contentConfiguration = content
         
@@ -75,6 +101,18 @@ extension NewMessageController {
 
 extension NewMessageController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.controller(self, wantsToStartChatVith: users[indexPath.row])
+        let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
+        delegate?.controller(self, wantsToStartChatVith: user)
     }
 } 
+
+extension NewMessageController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        filteredUsers = users.filter({ user in
+            return user.fullname.contains(searchText) || user.username.contains(searchText)
+        })
+        self.tableView.reloadData()
+    }
+}
