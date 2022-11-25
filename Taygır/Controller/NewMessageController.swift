@@ -75,8 +75,8 @@ class NewMessageController: UITableViewController {
         definesPresentationContext = false
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            textField.textColor = .taygir
-            textField.backgroundColor = .white
+            textField.textColor = .white
+            textField.backgroundColor = .darkGray
         }
     }
 }
