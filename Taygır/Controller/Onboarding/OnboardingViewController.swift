@@ -30,9 +30,9 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // BİRİSİNİ GÖRDÜM SANKİ AA ZEYNEP'MİŞ OHA BU TATLILIK NE!!
-        slides = [OnboardingSlide(title: "", description: "", image: #imageLiteral(resourceName: "cirtter")),
-                  OnboardingSlide(title: "", description: "", image: #imageLiteral(resourceName: "2")),
-                  OnboardingSlide(title: "", description: "", image: #imageLiteral(resourceName: "3"))
+        slides = [OnboardingSlide(title: "BİRİSİNİ GÖRDÜM SANKİ", description: "", image: #imageLiteral(resourceName: "cirtter")),
+                  OnboardingSlide(title: "AA ZEYNEP'MİŞ", description: "", image: #imageLiteral(resourceName: "2")),
+                  OnboardingSlide(title: "OHA BU TATLILIK NE!!", description: "", image: #imageLiteral(resourceName: "3"))
         ]
         validateAuth()
     }
