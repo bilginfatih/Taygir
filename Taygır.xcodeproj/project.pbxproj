@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396A2D5C2930A553001794A2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A2D5B2930A553001794A2 /* OnboardingViewController.swift */; };
+		396A2D5E2930A565001794A2 /* OnboardingCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A2D5D2930A565001794A2 /* OnboardingCollectionCollectionViewCell.swift */; };
+		396A2D602930A57C001794A2 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A2D5F2930A57C001794A2 /* OnboardingSlide.swift */; };
 		39A7E62A292E4C9B00AD6DBE /* Pods_Taygır.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */; };
 		39A7E62E292E5A8500AD6DBE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7E62D292E5A8500AD6DBE /* AuthService.swift */; };
 		39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA19F2292F96B7009E21C6 /* MessageCell.swift */; };
@@ -63,6 +66,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		396A2D5B2930A553001794A2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		396A2D5D2930A565001794A2 /* OnboardingCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		396A2D5F2930A57C001794A2 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		39A7E629292E4C9B00AD6DBE /* Pods_Taygır.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Taygır.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A7E62D292E5A8500AD6DBE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		39AA19F2292F96B7009E21C6 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -135,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		396A2D5A2930A53F001794A2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				396A2D5B2930A553001794A2 /* OnboardingViewController.swift */,
+				396A2D5D2930A565001794A2 /* OnboardingCollectionCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		39FF932D29279C1200456B3A = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +211,7 @@
 		39FF934F29279C2A00456B3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				396A2D5A2930A53F001794A2 /* Onboarding */,
 				39FF93552927AB8F00456B3A /* Authentication */,
 				39FF935329279C8800456B3A /* ConversationsController.swift */,
 				39E37417292F7B46009A7824 /* NewMessageController.swift */,
@@ -212,6 +228,7 @@
 				39AA19F6292FAB02009E21C6 /* MessageViewModel.swift */,
 				39AA19FC292FE45B009E21C6 /* ConversationViewModel.swift */,
 				39AA1A03293014CE009E21C6 /* ProfileViewModel.swift */,
+				396A2D5F2930A57C001794A2 /* OnboardingSlide.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,6 +483,8 @@
 				39AA19F9292FB45F009E21C6 /* Constants.swift in Sources */,
 				39FF93752927B1A700456B3A /* LeftArm.swift in Sources */,
 				39E3741E292F836C009A7824 /* Service.swift in Sources */,
+				396A2D602930A57C001794A2 /* OnboardingSlide.swift in Sources */,
+				396A2D5E2930A565001794A2 /* OnboardingCollectionCollectionViewCell.swift in Sources */,
 				39FF93772927B1A700456B3A /* RightEar.swift in Sources */,
 				39FF935B2927AD2600456B3A /* UIColors+ColorPallete.swift in Sources */,
 				39E3741C292F8322009A7824 /* User.swift in Sources */,
@@ -474,6 +493,7 @@
 				39AA19F3292F96B7009E21C6 /* MessageCell.swift in Sources */,
 				39FF937E2927B1A700456B3A /* LeftEarMask.swift in Sources */,
 				39AA19FD292FE45B009E21C6 /* ConversationViewModel.swift in Sources */,
+				396A2D5C2930A553001794A2 /* OnboardingViewController.swift in Sources */,
 				39AA1A04293014CE009E21C6 /* ProfileViewModel.swift in Sources */,
 				39FF93862927B1B300456B3A /* CritterView.swift in Sources */,
 				39FF93592927ABCF00456B3A /* RegistirationController.swift in Sources */,
